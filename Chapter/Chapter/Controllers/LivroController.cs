@@ -9,6 +9,8 @@ namespace Chapter.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
+
+    [Authorize(Roles = "1")]
     public class LivroController : ControllerBase
     {
         private readonly LivroRepository _livroRepository;

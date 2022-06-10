@@ -6,15 +6,11 @@ namespace Chapter.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-
         private readonly ChapterContext _context;
-
         public UsuarioRepository(ChapterContext context)
         {
             _context = context;
         }
-
-
         public void Atualizar(int id, Usuario usuario)
         {
             Usuario usuarioEncontrado = _context.Usuarios.Find(id);
@@ -29,7 +25,6 @@ namespace Chapter.Repositories
 
                 _context.SaveChanges();
             }
-
         }
 
         public Usuario BuscarPorId(int id)
@@ -40,17 +35,15 @@ namespace Chapter.Repositories
         public void Cadastrar(Usuario usuario)
         {
             _context.Usuarios.Add(usuario);
-
             _context.SaveChanges();
         }
 
         public void Deletar(int id)
         {
             Usuario usuarioEncontrado = _context.Usuarios.Find(id);
-
             _context.Usuarios.Remove(usuarioEncontrado);
-
             _context.SaveChanges();
+
         }
 
         public List<Usuario> Listar()
@@ -62,5 +55,6 @@ namespace Chapter.Repositories
         {
             return _context.Usuarios.FirstOrDefault(x => x.Email == email && x.Senha == senha);
         }
+            
     }
 }

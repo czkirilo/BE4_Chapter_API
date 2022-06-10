@@ -23,6 +23,7 @@ namespace Chapter.Contexts
         }
         // dbset representa as entidades que serao utilizadas nas operacoes de leitura, criacao, atualizacao e delecao.
         public DbSet<Livro> Livros { get; set; }
+
         public DbSet<Usuario> Usuarios { get; set; }
     }
 }
